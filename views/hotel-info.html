@@ -1,0 +1,67 @@
+{{> header }}
+<div class="row">
+
+    <section id="firstSection" class="large-12 columns">
+        <br>
+        <div class="large-6 small-12 columns">
+            <img src="{{Hotel.ThumbnailUrl}}y.jpg">
+        </div>
+        <div class="large-6 small-12 columns">
+            <h2 class="HotelName"><a href="/hotel/info/{{Hotel.HotelID}} ">
+            {{Hotel.Name}}
+            </a></h2>
+
+            <span class="HotelLocation"><i class="fi-marker"></i> {{Hotel.Location.City}}, {{Hotel.Location.Province}} </span>
+            <br/>
+            <span class="StarRating"><i class="fi-star"></i> {{Hotel.StarRating}} STARS HOTEL</span>
+            <p class="HotelDesc">
+                {{Hotel.Description}}
+            </p>
+            <input type="hidden" name="HotelLat" id="HotelLat" value="{{Hotel.Location.GeoLocation.Latitude}}">
+            <input type="hidden" name="HotelLong" id="HotelLong" value="{{Hotel.Location.GeoLocation.Longitude}}">
+
+
+            <a href="#" class="button tiny round secondary
+                               ">More Details on Expedia.com</a>
+
+        </div>
+    </section>
+
+    <hr/>
+    <div class="large-12 columns">
+        <div class="large-6 small-12 columns">
+            <h4 class="subheader">Reviews from <img src="/img/yelp_logo_50x25.png" style="margin-top: -7px;
+"></h4>
+            <div class="row">
+                {{#each Reviews}}
+                <div class="small-3 columns">
+                    <a href="http://www.yelp.com/biz/{{../YelpID}}?hrid={{this.id}}">
+                        <img class="th" src="{{this.user.image_url}}">
+                        <span>{{this.user.name}}</span>
+                    </a>
+                </div>
+                <div class="small-9 columns">
+                    <blockquote>
+                        <img src="{{this.rating_image_url}}">
+                        <br/> {{this.excerpt}}
+                        <a class="label" href="http://www.yelp.com/biz/{{../YelpID}}?hrid={{this.id}}">
+                    Read More</a>
+                    </blockquote>
+                </div>
+                {{else}} No reviews for this place on Yelp!. {{/each}}
+            </div>
+            <div class="row">
+                <h4 class="subheader">Weather at {{Hotel.Location.City}} </h4> {{{Forecast}}}
+            </div>
+        </div>
+        <div class="large-6 small-12 columns">
+            <div id="HotelMap" class="flex-video">
+            </div>
+
+            <script src="/js/map.js"></script>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+{{> header}}
+
+<section id="HomepageHero">
+    <div class="row">
+
+        <div class="large-6 columns text">
+            <h1>Travel smarter</h1>
+            <span>We give you the hotel information you need, so that you have <i>suite</i> dreams.</span>
+            <br>
+        </div>
+
+
+        <div class="large-6 columns">
+            <form id="HotelSearchForm" action="/hotel/search" method="post">
+                <fieldset id="MainForm">
+                    <legend>Let's get you some info:</legend>
+
+                    <label><i class="fi-marker"></i> Going to:
+                        <input type="text" placeholder="Start with a city or a place name :)" name="destination" id="InputDestination">
+                    </label>
+                    <input type="hidden" data-geo="lat" id="DestLat" name="DestLat">
+                    <input type="hidden" data-geo="lng" id="DestLong" name="DestLong">
+                    <button class="small button right" name="Send" type="submit">Search <i class="fi-magnifying-glass"></i></button>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+</section>
+<div class="row">
+    <div class="large-12 columns">
+        <h3>Recommended</h3> {{#each hotels}}
+
+        <div class="large-3 small-6 columns">
+            <img src="{{this.ThumbnailUrl}}l.jpg">
+            <h4>
+            <a href="/hotel/info/{{this.HotelID}} ">
+            {{this.Name}}
+            </a>
+        </h4>
+            <h5>{{this.Location.City}},{{this.Location.Province}}</h5>
+            <span>{{this.StarRating}} stars</span>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+
+        $("#InputDestination").geocomplete({
+            details: "#HotelSearchForm",
+            detailsAttribute: "data-geo"
+        });
+    });
+</script>
+</body>
+
+</html>

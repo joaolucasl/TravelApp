@@ -1,0 +1,28 @@
+{
+  "name": "TravelApp",
+  "version": "0.0.1",
+  "description": "This Application is a information centre about hotels and locations",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "travel",
+    "hotels",
+    "directory"
+  ],
+  "author": "João Lucas Goncalves Lucchetta",
+  "license": "GNU GPL v3.0",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "consolidate": "~0.13.1",
+    "express": "~4.13.3",
+    "geoip-lite": "^1.1.6",
+    "handlebars": "~4.0.2",
+    "q": "~1.4.1",
+    "request": "~2.61.0",
+    "request-promise": "~0.4.3",
+    "yelp": "~0.2.0",
+    "yql": "~1.0.2"
+  }
+}

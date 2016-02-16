@@ -1,0 +1,47 @@
+{{> header}}
+
+<section id="SearchHero">
+    <div class="row">
+
+        <div class="large-6 columns text">
+            <h1>Travel smarter</h1>
+            <span>We give you the hotel information you need, so that you have <i>suite</i> dreams.</span>
+            <br>
+        </div>
+
+
+        <div class="large-6 columns">
+
+        </div>
+
+    </div>
+</section>
+<div class="row">
+    <div class="large-12 columns">
+        <h3>Search</h3> {{#each hotels}}
+
+        <div class="large-3 small-6 columns">
+            <img src="{{this.ThumbnailUrl}}l.jpg">
+            <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;margin-bottom: 0px;"> <a href="/hotel/info/{{this.HotelID}} ">
+            {{this.Name}}
+            </a>
+        </h5>
+            <span>{{this.Location.City}},{{this.Location.Province}}</span>
+            <span>{{this.StarRating}} stars</span>
+            <a class="tiny button left secondary" href="/hotel/info/{{this.HotelID}} ">
+MORE INFO
+            </a>
+        </div>
+        {{else}}
+        <div style="text-align:center">
+            <h3>We couldn't find any hotel :(</h3>
+            <h5>Please <a href="/">click here</a> to go back to the Homepage and try again! </h5>
+        </div>
+
+        {{/each}}
+    </div>
+</div>
+
+</body>
+
+</html>

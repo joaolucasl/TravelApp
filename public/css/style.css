@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif|Quattrocento+Sans);
+body {
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Bree Serif', serif;
+}
+
+.HotelName {
+    color: firebrick
+}
+
+.HotelLocation {
+    font-size: 1.17778rem;
+}
+
+.StarRating {
+    font-weight: bold;
+    color: #FFCB00;
+}
+
+#firstSection {
+    padding-bottom: 20px;
+}
+
+#HotelMap {
+    height: 200px;
+}
+
+#HomepageHero {
+    background: url('/img/homepage-bg.jpg') #074e68;
+    background-position: center;
+    background-size: cover;
+    text-align: left;
+    position: relative;
+    padding: 50px 20px 50px 20px;
+    color: #fff;
+}
+
+#HomepageHero > .row > .text> h1,
+#HomepageHero > .row > .text> h3 {
+    color: #fff;
+}
+
+#HomepageHero > .row > .text> span {
+    font-size: 1.6875rem;
+}
+
+#MainForm > legend {
+    background: none;
+}
+
+#MainForm > label {
+    color: #FFF;
+}

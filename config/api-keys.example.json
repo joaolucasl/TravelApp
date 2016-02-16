@@ -1,0 +1,14 @@
+{
+
+    "expedia": {
+        "key": "YOURKEY",
+        "secret": "YOURSECRET"
+    },
+    "yelp": {
+        "consumer_key": "consumer-key",
+        "consumer_secret": "consumer-secret",
+        "token": "token",
+        "token_secret": "token-secret"
+    }
+
+}
